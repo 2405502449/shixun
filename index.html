@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <style>
+        .xuanze{
+           width: 300px;
+           background: #fffacd;
+           display: flex;
+           
+        }
+        .nei,.wai{
+            width: 150px;
+            text-align: center;
+        }
+        .nei{
+            background: chartreuse;
+        }
+        
+        .content{
+            width: 300px;
+            height: 200px;
+            background: rgb(176, 176, 223);
+        }
+        .content1{
+            width: 300px;
+            height: 200px;
+            background: rgb(176, 223, 186);
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="xuanze">
+            <div class="nei" @click="btn">国内</div>
+            <div class="wai" @click="btn1">国外</div> 
+        </div>
+        <div v-if="show" class="content">显示国内</div>
+        <div  v-else class="content1">显示国外</div>
+        <!-- <div>显示国外</div> -->
+    </div>
+
+    <script>
+        var app = new Vue({
+            el:'#main',
+            data:{
+                show:true
+            },
+            methods:{
+                btn(){
+                    this.show = true
+                },
+                btn1(){
+                    this.show = false
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
